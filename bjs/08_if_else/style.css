@@ -1,4 +1,9 @@
 .game-card {
+    background-color: rgb(3, 58, 16);
     height: 100vh;
     font-family: 'Open Sans', monospace;
+}
+
+body {
+    background-color: #033a10;
 }
