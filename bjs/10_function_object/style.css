@@ -1,0 +1,48 @@
+#container_1 {
+   margin-top: 200px;
+}
+
+#fioСard {
+   border: 1px solid #000000;
+}
+
+.card-header {
+   background-color: #76d958;
+   color: #000000;
+}
+
+#surnameOutput,#patronymicOutput, #firstNameOutput {
+   color: #00a9dd;
+}
+
+#genderOutput {
+   color: blue;
+}
+
+#professionOutput {
+   color: #dd6700;
+}
+
+button {
+   margin-top: 20px;
+   margin-right: 20px;
+   margin-left: 20px;
+}
+
+#btnErase {
+   background-color: #ffffff;
+}
+
+#btnErase:hover {
+   box-shadow: inset 0 0 15px rgb(212, 62, 62);
+   outline: none;
+}
+
+#btnGenerate {
+   background-color: #ffffff;
+}
+
+#btnGenerate:hover {
+   box-shadow: inset 0 0 15px #185804;;
+   outline: none;
+}

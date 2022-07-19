@@ -80,51 +80,57 @@ document.getElementById('btn_.').addEventListener('click',function () {
 
 
 document.getElementById('btn_sum').addEventListener('click',function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'sum';
     inputWindow.value = '0';
 })
 
 document.getElementById('btn_def').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'def';
     inputWindow.value = '0';
 })
 document.getElementById('btn_times').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'times';
     inputWindow.value = '0';
 })
 document.getElementById('btn_divide').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'divide';
     inputWindow.value = '0';
 })
 
 document.getElementById('btn_percent').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'percent';
     inputWindow.value = lastOperand / 100;
 })
 
 document.getElementById('btn_degree').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'degree';
     inputWindow.value = lastOperand * lastOperand;
 })
 
 document.getElementById('btn_sqrt').addEventListener('click', function () {
-    lastOperand = parseInt(inputWindow.value);
+    lastOperand = parseFloat(inputWindow.value);
     operation = 'sqrt';
     inputWindow.value = Math.sqrt(eval(inputWindow.value));
 })
 
+document.getElementById('btn_+/-').addEventListener('click', function () {
+    lastOperand = parseFloat(inputWindow.value);
+    operation = '+/-';
+    inputWindow.value = - inputWindow.value;
+
+})
 
 document.getElementById('btn_calc').addEventListener('click', function () {
     if (operation === 'sum'){
         const result = lastOperand + parseFloat(inputWindow.value);
         operation = 'sum';
-        lastOperand = parseFloat(inputWindow.value);
+        lastOperand = 0;
         inputWindow.value = result;
     }
     if (operation === 'def'){
