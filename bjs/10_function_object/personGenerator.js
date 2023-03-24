@@ -101,26 +101,23 @@ const personGenerator = {
     GENDER_MALE: 'Мужской',
     GENDER_FEMALE: 'Женский',
 
-
-
+    // Функция randomIntNumber реализует функционал генерации случайного числа.
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
 
-
+    // Функция randomValue реализует функционал генерации случайного показателя в зависимости от функции randomIntNumber.
     randomValue: function (json) {
         const obj = JSON.parse(json);
         const prop = `id_${this.randomIntNumber(obj.count, 1)}`;
         return obj.list[prop];
     },
 
-    // генераци пола
-
-	 randomGender: function () {
+    // Функция randomGender реализует функционал генерации пола.
+	randomGender: function () {
         gender = this.randomIntNumber(1, 0) === 0 ? this.GENDER_MALE : this.GENDER_FEMALE;
         return gender;
     },
 
-	//генерация фио
-	
+	// Функция randomFirstName реализует функционал генерации имени в зависимости от пола.	
 	randomFirstName: function () {
         if (this.person.gender === this.GENDER_MALE) {
             return this.randomValue(this.firstNameMaleJson);
@@ -128,6 +125,7 @@ const personGenerator = {
             return this.randomValue(this.firstNameFemaleJson);
     },
 
+    // Функция randomSurname реализует функционал генерации фамилии в зависимости от пола.
     randomSurname: function () {
         if (this.person.gender === this.GENDER_MALE) {
             return this.randomValue(this.surnameJson);
@@ -135,6 +133,7 @@ const personGenerator = {
             return this.randomValue(this.surnameJson) + 'а';
     },
 
+    // Функция randomPatronymic реализует функционал генерации отчества в зависимости от пола.
     randomPatronymic: function () {
         let patronymic = this.randomValue(this.firstNameMaleJson);
         return this.nameToPatronymic(patronymic);
@@ -201,7 +200,7 @@ const personGenerator = {
         }
     },
 
-	// генерация профессии
+    // Функция randomProfession реализует функционал генерации профессии в зависимости от пола.
 	 randomProfession: function () {
         if (this.person.gender === this.GENDER_MALE) {
             return this.randomValue(this.professionMaleJson);
@@ -209,7 +208,7 @@ const personGenerator = {
             return this.randomValue(this.professionFemaleJson);
     },
 
-    // генерация даты рождения
+    // Функция randomBirthday реализует функционал генерации даты рождения.
     randomBirthday: function () {
         year = this.randomIntNumber(2002, 1950);
         month = this.randomValue(this.monthJson);

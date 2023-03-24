@@ -1,3 +1,4 @@
+// генерация новых данных
 window.onload = function () {
     const initPerson = personGenerator.getPerson();
     document.getElementById('genderOutput').innerText = initPerson.gender;
@@ -8,6 +9,7 @@ window.onload = function () {
     document.getElementById('professionOutput').innerText = initPerson.profession;
 };
 
+// реализация очистки данных при нажатии на кнопку
 document.getElementById('btnErase').addEventListener('click', function () {
     document.getElementById('genderOutput').innerText = '';
     document.getElementById('surnameOutput').innerText = '';
@@ -17,6 +19,7 @@ document.getElementById('btnErase').addEventListener('click', function () {
     document.getElementById('professionOutput').innerText = '';
 });
 
+// реализация генерации новых данных при нажатии на кнопку
 document.getElementById('btnGenerate').addEventListener('click', function () {
     window.onload();
 });
