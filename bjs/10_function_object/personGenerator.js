@@ -113,6 +113,12 @@ const personGenerator = {
 
     // Функция randomGender реализует функционал генерации пола.
 	randomGender: function () {
+        // if (this.randomIntNumber(1, 0) === 0) {
+        //     return this.GENDER_MALE
+        // } else {
+        //     return this.GENDER_FEMALE
+        // }
+
         gender = this.randomIntNumber(1, 0) === 0 ? this.GENDER_MALE : this.GENDER_FEMALE;
         return gender;
     },
@@ -121,16 +127,18 @@ const personGenerator = {
 	randomFirstName: function () {
         if (this.person.gender === this.GENDER_MALE) {
             return this.randomValue(this.firstNameMaleJson);
-        } else
+        } else {
             return this.randomValue(this.firstNameFemaleJson);
+        }
     },
 
     // Функция randomSurname реализует функционал генерации фамилии в зависимости от пола.
     randomSurname: function () {
         if (this.person.gender === this.GENDER_MALE) {
             return this.randomValue(this.surnameJson);
-        } else
+        } else {
             return this.randomValue(this.surnameJson) + 'а';
+        }
     },
 
     // Функция randomPatronymic реализует функционал генерации отчества в зависимости от пола.
